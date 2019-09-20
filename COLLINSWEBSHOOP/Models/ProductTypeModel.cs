@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace COLLINSWEBSHOOP.Styles
- {  
-    public class ProductTypemodel
+namespace COLLINSWEBSHOOP.Models
+{
+    public class ProductTypeModel
     {
-        public string InsertproductType(Product_Type productType)
+        public string InsertproductType(productType productType)
         {
             try
             {
-                firstdbEntities1 db = new firstdbEntities1();
-                db.Product_Types.Add(productType);
+                firstdbEntities2 db = new firstdbEntities2();
+                db.productTypes.Add(productType);
                 db.SaveChanges();
                 return productType.Name + "was sucessfully inserted";
             }
@@ -20,35 +20,35 @@ namespace COLLINSWEBSHOOP.Styles
             {
                 return "Error:" + e;
             }
-
         }
-        public string UpdateproductType(int id,Product_Type productType)
+        public string UpdateproductType(int id, productType productType)
         {
             try
             {
-                firstdbEntities1 db = new firstdbEntities1();
+                firstdbEntities2 db = new firstdbEntities2();
                 //Fetch object from db
-                Product_Type p = db.Product_Types.Find(id);
+                productType p = db.productTypes.Find(id);
                 p.Name = productType.Name;
                 db.SaveChanges();
                 return productType.Name + "was sucessfully updated";
+
             }
             catch(Exception e)
             {
                 return "Error:" + e;
             }
-        } 
+
+        }
         public string DeleteproductType(int id)
         {
             try
             {
-                firstdbEntities1 db = new firstdbEntities1();
-                Product_Type product_Type = db.Product_Types.Find(id);
-                db.Product_Types.Attach(product_Type);
-                db.Product_Types.Remove(product_Type);
+                firstdbEntities2 db = new firstdbEntities2();
+                productType productType = db.productTypes.Find(id);
+                db.productTypes.Attach(productType);
+                db.productTypes.Remove(productType);
                 db.SaveChanges();
-                return product_Type.Name + "was sucessfully deleted";
-
+                return productType.Name + "was sucessfully deleted";
             }
             catch(Exception e)
             {
@@ -56,5 +56,4 @@ namespace COLLINSWEBSHOOP.Styles
             }
         }
     }
-      
- }
+}

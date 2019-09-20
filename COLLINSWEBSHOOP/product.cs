@@ -22,6 +22,6 @@ namespace COLLINSWEBSHOOP
         public string Image { get; set; }
     
         public virtual Cart Cart { get; set; }
-        public virtual Product_Type Product_Types { get; set; }
+        public virtual productType productType { get; set; }
     }
 }

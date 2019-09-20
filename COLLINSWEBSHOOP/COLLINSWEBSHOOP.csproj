@@ -76,7 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bannerimage.jpeg" />
-    <Content Include="Global.asax" />
     <Content Include="Model2.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model2.edmx</DependentUpon>
@@ -88,17 +87,13 @@
       <LastGenOutput>Model2.cs</LastGenOutput>
     </Content>
     <Content Include="Pages\ABOUT US.aspx" />
-    <Content Include="Pages\Management\ManageproductType.aspx" />
+    <Content Include="Pages\Management\ManageproductTypes.aspx" />
     <Content Include="Styles\StyleSheet1.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cart.cs">
       <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CartModel.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Model2.Context.cs">
       <AutoGen>True</AutoGen>
@@ -115,6 +110,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model2.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cartmodel.cs" />
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\ProductTypeModel.cs" />
     <Compile Include="Pages\ABOUT US.aspx.cs">
       <DependentUpon>ABOUT US.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -122,20 +120,17 @@
     <Compile Include="Pages\ABOUT US.aspx.designer.cs">
       <DependentUpon>ABOUT US.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Management\ManageproductType.aspx.cs">
-      <DependentUpon>ManageproductType.aspx</DependentUpon>
+    <Compile Include="Pages\Management\ManageproductTypes.aspx.cs">
+      <DependentUpon>ManageproductTypes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Management\ManageproductType.aspx.designer.cs">
-      <DependentUpon>ManageproductType.aspx</DependentUpon>
+    <Compile Include="Pages\Management\ManageproductTypes.aspx.designer.cs">
+      <DependentUpon>ManageproductTypes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Management\Product_TypeModel.cs" />
     <Compile Include="product.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
-    <Compile Include="Productmodel.cs" />
-    <Compile Include="ProductTypeModel.cs" />
-    <Compile Include="Product_Type.cs">
+    <Compile Include="productType.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -146,7 +141,6 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
-    <Compile Include="Styles\Productmodel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Model2.edmx">

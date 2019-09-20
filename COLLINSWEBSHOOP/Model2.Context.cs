@@ -13,10 +13,10 @@ namespace COLLINSWEBSHOOP
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class firstdbEntities1 : DbContext
+    public partial class firstdbEntities2 : DbContext
     {
-        public firstdbEntities1()
-            : base("name=firstdbEntities1")
+        public firstdbEntities2()
+            : base("name=firstdbEntities2")
         {
         }
     
@@ -27,6 +27,6 @@ namespace COLLINSWEBSHOOP
     
         public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<product> products { get; set; }
-        public virtual DbSet<Product_Type> Product_Types { get; set; }
+        public virtual DbSet<productType> productTypes { get; set; }
     }
 }

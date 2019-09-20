@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="firstdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="firstdbModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cart">
           <Key>
             <PropertyRef Name="id" />
@@ -27,7 +27,7 @@
           <Property Name="Description" Type="text" />
           <Property Name="Image" Type="varchar" MaxLength="150" />
         </EntityType>
-        <EntityType Name="Product Types">
+        <EntityType Name="productTypes">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -47,10 +47,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_product_Product Types">
-          <End Role="Product Types" Type="Self.Product Types" Multiplicity="1" />
+          <End Role="productTypes" Type="Self.productTypes" Multiplicity="1" />
           <End Role="product" Type="Self.product" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Product Types">
+            <Principal Role="productTypes">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="product">
@@ -58,16 +58,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="firstdbModelStoreContainer">
+        <EntityContainer Name="firstdbModel2StoreContainer">
           <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Product Types" EntityType="Self.Product Types" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="productTypes" EntityType="Self.productTypes" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_product_Cart" Association="Self.FK_product_Cart">
             <End Role="Cart" EntitySet="Cart" />
             <End Role="product" EntitySet="product" />
           </AssociationSet>
           <AssociationSet Name="FK_product_Product Types" Association="Self.FK_product_Product Types">
-            <End Role="Product Types" EntitySet="Product Types" />
+            <End Role="productTypes" EntitySet="productTypes" />
             <End Role="product" EntitySet="product" />
           </AssociationSet>
         </EntityContainer>
@@ -75,7 +75,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="firstdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="firstdbModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Cart">
           <Key>
             <PropertyRef Name="id" />
@@ -99,15 +99,15 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Image" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Cart" Relationship="Self.FK_product_Cart" FromRole="product" ToRole="Cart" />
-          <NavigationProperty Name="Product_Types" Relationship="Self.FK_product_Product_Types" FromRole="product" ToRole="Product_Types" />
+          <NavigationProperty Name="productType" Relationship="Self.FK_product_Product_Types" FromRole="product" ToRole="productTypes" />
         </EntityType>
-        <EntityType Name="Product_Type">
+        <EntityType Name="productType">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="products" Relationship="Self.FK_product_Product_Types" FromRole="Product_Types" ToRole="product" />
+          <NavigationProperty Name="products" Relationship="Self.FK_product_Product_Types" FromRole="productTypes" ToRole="product" />
         </EntityType>
         <Association Name="FK_product_Cart">
           <End Role="Cart" Type="Self.Cart" Multiplicity="1" />
@@ -122,10 +122,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_product_Product_Types">
-          <End Role="Product_Types" Type="Self.Product_Type" Multiplicity="1" />
+          <End Role="productTypes" Type="Self.productType" Multiplicity="1" />
           <End Role="product" Type="Self.product" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Product_Types">
+            <Principal Role="productTypes">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="product">
@@ -133,16 +133,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="firstdbEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="firstdbEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Carts" EntityType="Self.Cart" />
           <EntitySet Name="products" EntityType="Self.product" />
-          <EntitySet Name="Product_Types" EntityType="Self.Product_Type" />
+          <EntitySet Name="productTypes" EntityType="Self.productType" />
           <AssociationSet Name="FK_product_Cart" Association="Self.FK_product_Cart">
             <End Role="Cart" EntitySet="Carts" />
             <End Role="product" EntitySet="products" />
           </AssociationSet>
           <AssociationSet Name="FK_product_Product_Types" Association="Self.FK_product_Product_Types">
-            <End Role="Product_Types" EntitySet="Product_Types" />
+            <End Role="productTypes" EntitySet="productTypes" />
             <End Role="product" EntitySet="products" />
           </AssociationSet>
         </EntityContainer>
@@ -151,9 +151,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="firstdbModelStoreContainer" CdmEntityContainer="firstdbEntities1">
+        <EntityContainerMapping StorageEntityContainer="firstdbModel2StoreContainer" CdmEntityContainer="firstdbEntities2">
           <EntitySetMapping Name="Carts">
-            <EntityTypeMapping TypeName="firstdbModel.Cart">
+            <EntityTypeMapping TypeName="firstdbModel2.Cart">
               <MappingFragment StoreEntitySet="Cart">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Clientid" ColumnName="Clientid" />
@@ -165,7 +165,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="products">
-            <EntityTypeMapping TypeName="firstdbModel.product">
+            <EntityTypeMapping TypeName="firstdbModel2.product">
               <MappingFragment StoreEntitySet="product">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="TypeId" ColumnName="TypeId" />
@@ -176,9 +176,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Product_Types">
-            <EntityTypeMapping TypeName="firstdbModel.Product_Type">
-              <MappingFragment StoreEntitySet="Product Types">
+          <EntitySetMapping Name="productTypes">
+            <EntityTypeMapping TypeName="firstdbModel2.productType">
+              <MappingFragment StoreEntitySet="productTypes">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>

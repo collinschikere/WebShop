@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="57479efac247467281f6834b90b50ee6" Name="Diagram1">
-        <EntityTypeShape EntityType="firstdbModel.Cart" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="firstdbModel.product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="firstdbModel.Product_Type" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <AssociationConnector Association="firstdbModel.FK_product_Cart" ManuallyRouted="false" />
-        <AssociationConnector Association="firstdbModel.FK_product_Product_Types" ManuallyRouted="false" />
+      <Diagram DiagramId="18d51e50952347b0b929659cbf88478d" Name="Diagram1">
+        <EntityTypeShape EntityType="firstdbModel2.Cart" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="firstdbModel2.product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="firstdbModel2.productType" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="firstdbModel2.FK_product_Cart" ManuallyRouted="false" />
+        <AssociationConnector Association="firstdbModel2.FK_product_Product_Types" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

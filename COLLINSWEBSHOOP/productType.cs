@@ -12,10 +12,10 @@ namespace COLLINSWEBSHOOP
     using System;
     using System.Collections.Generic;
     
-    public partial class Product_Type
+    public partial class productType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product_Type()
+        public productType()
         {
             this.products = new HashSet<product>();
         }

@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace COLLINSWEBSHOOP.Styles
+namespace COLLINSWEBSHOOP.Models
 {
-    public class Productmodel
-    { 
+    public class ProductModel
+    {
         public string Insertproduct(product product)
         {
             try
             {
-                firstdbEntities1 db = new firstdbEntities1();
+                firstdbEntities2 db= new firstdbEntities2();
                 db.products.Add(product);
                 db.SaveChanges();
                 return product.Name + "was sucessfully inserted";
@@ -20,37 +20,33 @@ namespace COLLINSWEBSHOOP.Styles
             {
                 return "Error:" + e;
             }
-        
+
         }
-        public string Updateproduct(int Id, product product)
+        public string Updateproduct(int id, product product)
         {
             try
             {
-                firstdbEntities1 db = new firstdbEntities1();
+                firstdbEntities2 db = new firstdbEntities2();
                 // Fetch object from db
-                product p = db.products.Find(Id);
+                product p = db.products.Find(id);
                 p.Name = product.Name;
                 p.price = product.price;
                 p.TypeId = product.TypeId;
-                p.Description = product.Image;
+                p.Description = product.Description;
+                p.Image = product.Image;
                 db.SaveChanges();
                 return product.Name + "was sucessfully updated";
-
-
-
             }
             catch(Exception e)
             {
                 return "Error:" + e;
             }
-            
-
         }
-        public string DeleteProduct(int id)
+        public string Deleteproduct(int id)
         {
             try
             {
-                firstdbEntities1 db = new firstdbEntities1();
+                firstdbEntities2 db = new firstdbEntities2();
                 product product = db.products.Find(id);
                 db.products.Attach(product);
                 db.products.Remove(product);
@@ -63,6 +59,6 @@ namespace COLLINSWEBSHOOP.Styles
             }
 
         }
-
     }
+
 }
