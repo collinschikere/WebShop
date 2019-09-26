@@ -21,7 +21,7 @@ namespace COLLINSWEBSHOOP.Pages.Management
             try
             {
                 //Get all filepaths
-                string[] images = Directory.GetFiles(Server.MapPath("~/Images/Product/"));
+                string[] images = Directory.GetFiles(Server.MapPath("~/Images/Products/"));
 
                 //Get all filenames and add them to an arraylist
                 ArrayList imageList = new ArrayList();
