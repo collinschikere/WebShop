@@ -1,4 +1,5 @@
-﻿using System;
+﻿using COLLINSWEBSHOOP.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,12 +17,13 @@ namespace COLLINSWEBSHOOP.Pages.Management
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-           productTypeModel model = new productTypeModel ();
-            productType pt = createproductType();
+            ProductTypeModel model = new ProductTypeModel();
+            productType pt = CreateproductType();
 
             lblResult.Text = model.InsertproductType(pt);
         }
-        private productType createproductType()
+
+        private productType CreateproductType()
         {
             productType p = new productType();
             p.Name = txtName.Text;

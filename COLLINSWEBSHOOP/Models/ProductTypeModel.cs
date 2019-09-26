@@ -14,7 +14,7 @@ namespace COLLINSWEBSHOOP.Models
                 firstdbEntities2 db = new firstdbEntities2();
                 db.productTypes.Add(productType);
                 db.SaveChanges();
-                return productType.Name + "was sucessfully inserted";
+                return productType.Name + " was sucessfully inserted";
             }
             catch(Exception e)
             {

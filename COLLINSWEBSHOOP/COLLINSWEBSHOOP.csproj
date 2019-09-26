@@ -76,6 +76,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bannerimage.jpeg" />
+    <Content Include="Images\Product\bannerimage.jpeg" />
+    <Content Include="Images\Product\TOCHIL.jpg" />
+    <Content Include="Images\Product\_240x320_04 - Copy.jpg" />
+    <Content Include="Images\Product\_240x320_06.jpg" />
+    <Content Include="Images\Product\_240x320_07.jpg" />
+    <Content Include="Images\Product\_320x240_01 - Copy.jpg" />
+    <Content Include="Images\Product\_320x240_03 - Copy.jpg" />
+    <Content Include="Images\Product\_320x240_08.jpg" />
+    <Content Include="Images\Product\_320x240_10 - Copy.jpg" />
     <Content Include="Model2.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model2.edmx</DependentUpon>
@@ -87,6 +96,7 @@
       <LastGenOutput>Model2.cs</LastGenOutput>
     </Content>
     <Content Include="Pages\ABOUT US.aspx" />
+    <Content Include="Pages\Management\ManageProduct.aspx" />
     <Content Include="Pages\Management\ManageproductTypes.aspx" />
     <Content Include="Styles\StyleSheet1.css" />
     <Content Include="Web.config" />
@@ -119,6 +129,13 @@
     </Compile>
     <Compile Include="Pages\ABOUT US.aspx.designer.cs">
       <DependentUpon>ABOUT US.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Management\ManageProduct.aspx.cs">
+      <DependentUpon>ManageProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Management\ManageProduct.aspx.designer.cs">
+      <DependentUpon>ManageProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Management\ManageproductTypes.aspx.cs">
       <DependentUpon>ManageproductTypes.aspx</DependentUpon>
