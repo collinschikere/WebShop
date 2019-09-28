@@ -31,7 +31,7 @@
         <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" Width="232px"></asp:TextBox>
     </p>
     <p>
-        <asp:Button ID="btnSubmit" runat="server" Text="SUBMIT" />
+        <asp:Button ID="btnSubmit" runat="server" Text="SUBMIT" OnClick="btnSubmit_Click" />
     </p>
     <p>
         <asp:Label ID="lblResult" runat="server"></asp:Label>

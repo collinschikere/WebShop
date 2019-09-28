@@ -21,7 +21,7 @@ namespace COLLINSWEBSHOOP.Pages.Management
             try
             {
                 //Get all filepaths
-                string[] images = Directory.GetFiles(Server.MapPath("~/Images/Products/"));
+                string[] images = Directory.GetFiles(Server.MapPath("~/Images/Product/"));
 
                 //Get all filenames and add them to an arraylist
                 ArrayList imageList = new ArrayList();
@@ -39,6 +39,28 @@ namespace COLLINSWEBSHOOP.Pages.Management
             {
                 lblResult.Text = e.ToString();
             }
+        }
+        private product CreateProduct()
+        {
+            product product = new product();
+
+            product.Name = txtName.Text;
+            product.price = Convert.ToDouble(txtPrice.Text);
+            product.TypeId = Convert.ToInt32(ddlType.SelectedValue);
+            product.Description = txtDescription.Text;
+            product.Image = ddlImage.SelectedValue;
+
+            return product;
+
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            productModel productModel = new ProductModel();
+            product product = CreateProduct();
+
+            lblResult.Text = productModel.InsertProduct(product);
+
         }
     }
 }
